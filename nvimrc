@@ -10,6 +10,8 @@ filetype plugin indent on " Turn on file type detection.
 
 set clipboard+=unnamed  " enables copy in vim and paste in OSX
 
+let mapleader=","
+
 " neovim extra configuration
 nmap <BS> <C-W>h
 
@@ -41,9 +43,6 @@ map <Leader>cv <plug>NERDComAlignedComment
 
 " ==== Buffer Explorer
 map <Leader>bb :BufExplorer<CR>
-
-" ==== Ctrl+P
-let g:ctrlp_map = '<leader>t'
 
 " ===== JSON plugin
 let g:vim_json_syntax_conceal = 0
@@ -125,3 +124,22 @@ set ruler                         " Show cursor position.
 set novisualbell                  " No beeping.
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
+
+" ==== Ctrl+P
+let g:ctrlp_map = '<leader>t'
+
+" ==== Silver Searcher
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+
+set exrc                          " enable per-directory .vimrc files
+set secure                        " disable unsafe commands in local .vimrc files
