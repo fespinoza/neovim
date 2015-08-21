@@ -139,5 +139,23 @@ Plug 'tpope/vim-eunuch'
 " http://apiblueprint.org
 Plug 'kylef/apiblueprint.vim'
 
+" A code-completion engine for Vim
+Plug 'Valloric/YouCompleteMe'
+
+" A tree explorer plugin for vim.
+Plug 'scrooloose/nerdtree'
+
+" Vim plugin that displays tags in a window, ordered by scope
+Plug 'majutsushi/tagbar'
+
+" A vim color scheme based on AstonJ's theme based on code school.
+Plug 'akmassey/vim-codeschool'
+
+" A vim color scheme based on the Railscasts Textmate theme.
+Plug 'jpo/vim-railscasts-theme'
+
+" A vim colorscheme based on Github's syntax highlighting.
+Plug 'endel/vim-github-colorscheme'
+
 " Add plugins to &runtimepath
 call plug#end()
