@@ -11,7 +11,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-ragtag'
 
 " Fuzzy file, buffer, mru, tag, etc finder.
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Automatically create any non-existent directories before writing the buffer.
 Plug 'pbrisbin/vim-mkdir'
@@ -39,9 +39,6 @@ Plug 'othree/html5.vim'
 " lean & mean status/tabline for vim that's light as air
 "Plug 'bling/vim-airline'
 "Plug 'edkolev/tmuxline.vim'
-
-" Fuzzy file, buffer, mru, tag, etc finder.
-Plug 'kien/ctrlp.vim'
 
 " unimpaired.vim: pairs of handy bracket mappings
 Plug 'tpope/vim-unimpaired'
@@ -79,8 +76,8 @@ Plug 'tpope/gem-ctags'
 Plug 'vim-scripts/AutoTag'
 
 " For markdown
-Plug 'tpope/vim-markdown'
-Plug 'nelstrom/vim-markdown-folding'
+" Plug 'tpope/vim-markdown'
+
 
 " Parse stack traces or quickfix entries and open the result in vim splits!
 "Plug 'mattboehm/vim-unstack'
@@ -91,6 +88,9 @@ Plug 'edsono/vim-matchit'
 
 " Vim script for text filtering and alignment
 Plug 'godlygeek/tabular'
+
+" Markdown Vim Mode http://plasticboy.com/markdown-vim-mode/
+Plug 'plasticboy/vim-markdown'
 
 " CoffeeScript support for vim
 Plug 'kchmck/vim-coffee-script'
@@ -145,6 +145,9 @@ Plug 'Valloric/YouCompleteMe'
 " A tree explorer plugin for vim.
 Plug 'scrooloose/nerdtree'
 
+" Vim plugin for intensely orgasmic commenting
+Plug 'scrooloose/nerdcommenter'
+
 " Vim plugin that displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar'
 
@@ -156,6 +159,27 @@ Plug 'jpo/vim-railscasts-theme'
 
 " A vim colorscheme based on Github's syntax highlighting.
 Plug 'endel/vim-github-colorscheme'
+
+" meta5: A vim colorscheme
+Plug 'christophermca/meta5'
+
+" abolish.vim: easily search for, substitute, and abbreviate multiple variants
+" of a word
+Plug 'tpope/vim-abolish'
+
+" This is a VIM plugin. This plugin runs current buffer by ruby, and write
+" results after marker comments.
+" NEEDS :ruby support
+" Plug 'kmdsbng/vim-ruby-eval'
+
+" vim plugin for tmux.conf
+Plug 'tmux-plugins/vim-tmux'
+
+" Simple vim plugin that adds TomDoc templates to your code.
+Plug 'jc00ke/vim-tomdoc'
+
+" A simple syntax add-on for vim that highlights your TomDoc comments
+Plug 'wellbredgrapefruit/tomdoc.vim'
 
 " Add plugins to &runtimepath
 call plug#end()

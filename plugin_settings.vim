@@ -61,3 +61,9 @@ map <Leader>bb :BufExplorer<CR>
 
 " ===== JSON plugin
 let g:vim_json_syntax_conceal = 0
+
+" ==== NERD Tree
+map <leader>n :NERDTreeToggle<CR>
+
+" ==== Markdown
+let g:vim_markdown_folding_disabled=1
