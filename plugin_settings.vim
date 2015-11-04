@@ -1,5 +1,6 @@
 " ==== Ctrl+P
 let g:ctrlp_map = '<leader>t'
+let g:ctrlp_working_path_mode = 0
 
 " ==== Silver Searcher
 " The Silver Searcher
@@ -67,3 +68,6 @@ map <leader>n :NERDTreeToggle<CR>
 
 " ==== Markdown
 let g:vim_markdown_folding_disabled=1
+
+" ==== Ag
+nnoremap <leader>a :Ag
