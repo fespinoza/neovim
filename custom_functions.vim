@@ -116,3 +116,5 @@ endfunction
 
 " Register a new command `AC` for open/create a related file
 command! AC :call <SID>CreateRelated()
+
+map <leader>er :e README.md<CR>
