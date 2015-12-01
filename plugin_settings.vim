@@ -71,3 +71,10 @@ let g:vim_markdown_folding_disabled=1
 
 " ==== Ag
 nnoremap <leader>a :Ag
+
+" ==== Vim Rspec
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec} -f documentation\n")'
+map <Leader>rt :call RunCurrentSpecFile()<CR>
+map <Leader>re :call RunNearestSpec()<CR>
+map <Leader>rl :call RunLastSpec()<CR>
+map <Leader>ra :call RunAllSpecs()<CR>

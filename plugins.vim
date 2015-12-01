@@ -181,5 +181,11 @@ Plug 'jc00ke/vim-tomdoc'
 " A simple syntax add-on for vim that highlights your TomDoc comments
 Plug 'wellbredgrapefruit/tomdoc.vim'
 
+" Run Rspec specs from Vim
+Plug 'thoughtbot/vim-rspec'
+
+" https://github.com/jgdavey/tslime.vim
+Plug 'jgdavey/tslime.vim'
+
 " Add plugins to &runtimepath
 call plug#end()
