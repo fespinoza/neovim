@@ -1,0 +1,112 @@
+priority -50
+
+###########################
+# Sections and Paragraphs #
+###########################
+snippet sec "Section" b
+# ${1:Section Name} #
+$0
+endsnippet
+
+snippet ssec "Sub Section" b
+## ${1:Section Name} ##
+$0
+endsnippet
+
+snippet sssec "SubSub Section" b
+### ${1:Section Name} ###
+$0
+endsnippet
+
+snippet par "Paragraph" b
+#### ${1:Paragraph Name} ####
+$0
+endsnippet
+
+snippet spar "Paragraph" b
+##### ${1:Paragraph Name} #####
+$0
+endsnippet
+
+################
+# Common stuff #
+################
+snippet link "Link to something"
+[${1:${VISUAL:Text}}](${3:http://${2:www.url.com}})$0
+endsnippet
+
+snippet img "Image"
+![${1:pic alt}](${2:path}${3/.+/ "/}${3:opt title}${3/.+/"/})$0
+endsnippet
+
+snippet ilc "Inline Code" i
+\`$1\`$0
+endsnippet
+
+snippet code "Codeblock" b
+\`\`\`$1
+$2
+\`\`\`
+$0
+endsnippet
+
+snippet cl "checkbox" b
+- [ ] $0
+endsnippet
+
+snippet endpoint "Creating Endpoints through MD" b
+# ${1:Name of the endpoint}
+
+## Rationale
+
+_why this endpoint is built?_
+_what it tries to achieve?_
+${2}
+
+## Request
+
+### Url
+
+\`\`\`http
+HTTP_VERB URL
+\`\`\`
+
+Headers
+
+\`\`\`http
+Accept: application/json
+\`\`\`
+
+Body/Parameters
+
+\`\`\`json
+{}
+\`\`\`
+
+- _Explanation of parameters_
+
+## Response
+
+Status Code: `200 OK`
+
+Headers
+
+\`\`\`http
+Content-Type: application/json
+\`\`\`
+
+Body
+
+\`\`\`json
+{}
+\`\`\`
+
+### Error Cases
+
+_which kind of errors can happen with this endpoint_
+
+- 400
+- 422
+endsnippet
+
+# vim:ft=snippets:

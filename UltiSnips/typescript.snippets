@@ -1,0 +1,14 @@
+snippet _ang_controller "Angular Controller for Typescript" b
+module $1 {
+	'use strict';
+
+	interface I${2:`!v expand("%:t:r")`}Scope extends ng.IScope {
+	}
+
+	export class $2Ctrl {
+		/* @ngInject */
+		constructor ($scope: I$2Scope) {
+		}
+	}
+}
+endsnippet

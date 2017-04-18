@@ -1,0 +1,46 @@
+snippet endpoint "Endpoint proposal" b
+# ${0:ENDPOINT NAME}
+
+## ${1:METHOD+PATH}
+
+<OBJECTIVE>
+
+### Request
+
+\`\`\`http
+<FULL URL>
+\`\`\`
+
+Headers
+\`\`\`http
+Accept-Language: nb, en
+Accept: application/json
+Authorization: Bearer <TOKEN>
+\`\`\`
+
+\`\`\`json
+<REQUEST BODY>
+\`\`\`
+
+### Response
+
+Status
+\`\`\`http
+200 Success
+\`\`\`
+
+Headers
+\`\`\`http
+Content-Type: application/json
+Etag: "897dfgh5978fg60098dfgh56db7sdfg7"
+\`\`\`
+
+Body
+\`\`\`json
+<RESPONSE-BODY>
+\`\`\`
+
+## Error Cases
+
+- <LIST HERE>
+endsnippet

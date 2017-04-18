@@ -1,7 +1,66 @@
+" vim: fdm=marker foldenable sw=2 ts=2 sts=2
 call plug#begin('~/.nvim/plugged')
 
+" examples: https://github.com/mcantor/dotfiles/blob/master/vim/.vimrc
+
 Plug 'tpope/vim-sensible'
-Plug 'benekastah/neomake'
+
+" {{{ Neomake
+
+Plug 'neomake/neomake'
+
+" Only do this part when compiled with support for autocommands
+if has("autocmd")
+  autocmd! BufWritePost * Neomake
+endif
+
+" }}}
+
+" {{{ text objects
+
+" kana/vim-textobj-user
+Plug 'kana/vim-textobj-user'
+
+" A Vim text object for selecting blank lines
+Plug 'zandrmartin/vim-textobj-blanklines'
+
+" Vim plugin: Text objects for the current line
+Plug 'kana/vim-textobj-line'
+
+" Vim plugin that defines a new text object representing lines of code at the
+" same indent level. Useful for python/vim scripts, etc.
+Plug 'michaeljsmith/vim-indent-object'
+
+" Text-object like motion for arguments
+Plug 'vim-scripts/argtextobj.vim'
+
+" }}}
+
+" {{{ CamelCaseMotiion
+" A vim script to provide CamelCase motion through words (fork of inkarkat's
+" camelcasemotion script)
+
+Plug 'bkad/CamelCaseMotion'
+
+" call camelcasemotion#CreateMotionMappings('<leader>')
+" }}}
+
+" {{{ Easy align
+
+Plug 'junegunn/vim-easy-align'
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" }}}
+
+" {{{ GV: A git commit browser
+
+Plug 'junegunn/gv.vim'
+
+" }}}
 
 " endwise.vim: wisely add 'end' in ruby, endfunction/endif/more in vim script,
 " etc
@@ -30,11 +89,20 @@ Plug 'tpope/vim-projectionist'
 " Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
 
+" Vim and tmux, sittin' in a tree...
+Plug 'christoomey/vim-tmux-runner'
+
 " Automatically create any non-existent directories before writing the buffer.
 Plug 'pbrisbin/vim-mkdir'
 
 " HTML5 omnicomplete and syntax
 Plug 'othree/html5.vim'
+
+" Vim mapping for sorting a range of text
+Plug 'christoomey/vim-sort-motion'
+
+" Teach Vim about titlecase, with support for motions and text objects
+Plug 'christoomey/vim-titlecase'
 
 " lean & mean status/tabline for vim that's light as air
 "Plug 'bling/vim-airline'
@@ -76,18 +144,12 @@ Plug 'tpope/gem-ctags'
 Plug 'vim-scripts/AutoTag'
 
 " For markdown
-" Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-markdown'
 
+" let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'yaml', 'haml', 'bash=sh']
 
 " Parse stack traces or quickfix entries and open the result in vim splits!
 "Plug 'mattboehm/vim-unstack'
-
-" The matchit.vim script allows you to configure % to match more than just
-" single characters
-Plug 'edsono/vim-matchit'
-
-" Vim script for text filtering and alignment
-Plug 'godlygeek/tabular'
 
 " Markdown Vim Mode http://plasticboy.com/markdown-vim-mode/
 Plug 'plasticboy/vim-markdown'
@@ -109,6 +171,12 @@ Plug 'vim-ruby/vim-ruby'
 
 " Buffer Explorer / Browser
 Plug 'vim-scripts/bufexplorer.zip'
+
+" repeat.vim: enable repeating supported plugin maps with '.'
+Plug 'tpope/vim-repeat'
+
+" More useful word motions for Vim
+" https://github.com/chaoren/vim-wordmotion
 
 " A vim plugin that simplifies the transition between multiline and
 " single-line code
@@ -139,14 +207,17 @@ Plug 'tpope/vim-eunuch'
 " http://apiblueprint.org
 Plug 'kylef/apiblueprint.vim'
 
-" A code-completion engine for Vim
-Plug 'Valloric/YouCompleteMe'
-
 " A tree explorer plugin for vim.
 Plug 'scrooloose/nerdtree'
 
+" A plugin of NERDTree showing git status
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " Vim plugin for intensely orgasmic commenting
 Plug 'scrooloose/nerdcommenter'
+
+" commentary.vim: comment stuff out
+" https://github.com/tpope/vim-commentary
 
 " Vim plugin that displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar'
@@ -186,6 +257,61 @@ Plug 'thoughtbot/vim-rspec'
 
 " https://github.com/jgdavey/tslime.vim
 Plug 'jgdavey/tslime.vim'
+
+" A Vim plugin that removes clutter and makes working on a widescreen monitor
+" enjoyable
+Plug 'merlinrebrovic/focus.vim'
+
+" Vim configuration files for Elixir http://elixir-lang.org/
+Plug 'elixir-lang/vim-elixir'
+
+" Gist - Access and edit gists locally
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+
+" Adds Swift support to vim. It covers syntax, intenting, and more.
+Plug 'toyamarinyon/vim-swift'
+
+" Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
+Plug 'taglist.vim'
+
+" SQL utilities - Formatting, generate - columns lists, procedures for databases
+Plug 'SQLUtilities'
+
+" SQLComplete is a SQL code completion system using the omnifunc framework
+Plug 'SQLComplete.vim'
+
+" Better SQL Syntax
+Plug 'sql.vim--Stinson'
+
+" Vim Auto conver small-case SQL keywords into upper-case with iabbr. I HATE
+" type UPPERCASE a lot.
+Plug 'stardiviner/autosqluppercase.vim'
+
+Plug 'kazuakim/vim-sqlfix'
+
+" Syntax Highlighting for Stylus
+Plug 'wavded/vim-stylus'
+
+" Colorscheme
+Plug 'vivkin/flatland.vim'
+
+" Ruby syntax extensions for highlighting YARD documentation.
+Plug 'noprompt/vim-yardoc'
+
+" precision colorscheme for the vim text editor
+" http://ethanschoonover.com/solarized
+Plug 'altercation/vim-colors-solarized'
+
+" {{{ Color schemes
+
+" Base16 for Vim
+Plug 'chriskempson/base16-vim'
+
+" A dark 16 color colorscheme for Vim, Gvim, and Nvim
+Plug 'jansenfuller/crayon'
+
+" }}}
 
 " Add plugins to &runtimepath
 call plug#end()

@@ -12,7 +12,13 @@ function! <SID>StripTrailingWhitespaces()
 endfunction
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
-command! SingleQuotes :%s/"/'/g
+function! VisualSingleQuotes()
+  let _s=@/
+  :.s/"\([^'#]*\)"/'\1'/g
+  let @/=_s
+endfunction
+command! SingleQuotes :%s/"\([^'#]*\)"/'\1'/g
+vmap <leader>sq :call VisualSingleQuotes()<CR>
 
 command! LocalVimrc :call LocalVimfile()
 function! LocalVimfile()
@@ -118,6 +124,7 @@ endfunction
 command! AC :call <SID>CreateRelated()
 
 map <leader>er :e README.md<CR>
+map <leader>ep :e PR.md<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PROMOTE VARIABLE TO RSPEC LET
@@ -131,3 +138,19 @@ function! PromoteToLet()
 endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
+
+function! ModernizeHash()
+  let _s=@/
+  :.s/:\?'\?\(.*\)\'\?\s*=>\s*\(.*\)/\1: \2/
+  :call VisualSingleQuotes()
+  let @/=_s
+endfunction
+:vmap <leader>mh :call ModernizeHash()<CR>
+
+" puts the caller
+nnoremap <leader>wtf oputs "#" * 120<c-m>puts caller<c-m>puts "#" * 120<esc>
+
+" camelCase => camel_case
+vnoremap ,case :s/\v\C(([a-z]+)([A-Z]))/\2_\l\3/g<CR>
+
+nmap <leader>cp :let @+ = expand("%")<CR>

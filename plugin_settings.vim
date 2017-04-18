@@ -15,12 +15,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" ==== Neomake
-" Only do this part when compiled with support for autocommands
-if has("autocmd")
-	autocmd! BufWritePost * Neomake
-endif
-
 " Tabular
 " autotabulate when writing tables
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
