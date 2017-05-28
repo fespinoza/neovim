@@ -104,10 +104,6 @@ Plug 'christoomey/vim-sort-motion'
 " Teach Vim about titlecase, with support for motions and text objects
 Plug 'christoomey/vim-titlecase'
 
-" lean & mean status/tabline for vim that's light as air
-"Plug 'bling/vim-airline'
-"Plug 'edkolev/tmuxline.vim'
-
 " unimpaired.vim: pairs of handy bracket mappings
 Plug 'tpope/vim-unimpaired'
 
@@ -143,10 +139,11 @@ Plug 'tpope/gem-ctags'
 " Updates entries in a tags file automatically when saving
 Plug 'vim-scripts/AutoTag'
 
-" For markdown
+" {{{ For markdown
 Plug 'tpope/vim-markdown'
 
-" let g:markdown_fenced_languages = ['html', 'python', 'ruby', 'yaml', 'haml', 'bash=sh']
+let g:markdown_fenced_languages = ['html', 'css', 'javascript', 'ruby', 'python', 'bash=sh', 'yaml', 'json']
+" }}}
 
 " Parse stack traces or quickfix entries and open the result in vim splits!
 "Plug 'mattboehm/vim-unstack'
@@ -157,8 +154,16 @@ Plug 'plasticboy/vim-markdown'
 " CoffeeScript support for vim
 Plug 'kchmck/vim-coffee-script'
 
-" fugitive.vim: a Git wrapper so awesome, it should be illegal
+" {{{ fugitive.vim: a Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
+
+command Gs Gstatus
+command Gc Gcommit -v
+" }}}
+
+" {{{ rhubarb.vim: GitHub extension for fugitive.vim
+Plug 'tpope/vim-rhubarb'
+" }}}
 
 " rails.vim: Ruby on Rails power tools
 Plug 'tpope/vim-rails'
@@ -194,8 +199,11 @@ Plug 'burnettk/vim-angular'
 
 Plug 'elzr/vim-json'
 
-" SnipMate
+" {{{ Snippets
 Plug 'SirVer/ultisnips' | Plug 'fespinoza/vim-snippets'
+
+let g:UltiSnipsSnippetDirectories=["~/Config/nvim/plugged/vim-snippets/UltiSnips"]
+" }}}
 
 " Collection of snippets for angular projects
 Plug 'matthewsimo/angular-vim-snippets'
@@ -221,18 +229,6 @@ Plug 'scrooloose/nerdcommenter'
 
 " Vim plugin that displays tags in a window, ordered by scope
 Plug 'majutsushi/tagbar'
-
-" A vim color scheme based on AstonJ's theme based on code school.
-Plug 'akmassey/vim-codeschool'
-
-" A vim color scheme based on the Railscasts Textmate theme.
-Plug 'jpo/vim-railscasts-theme'
-
-" A vim colorscheme based on Github's syntax highlighting.
-Plug 'endel/vim-github-colorscheme'
-
-" meta5: A vim colorscheme
-Plug 'christophermca/meta5'
 
 " abolish.vim: easily search for, substitute, and abbreviate multiple variants
 " of a word
@@ -293,23 +289,26 @@ Plug 'kazuakim/vim-sqlfix'
 " Syntax Highlighting for Stylus
 Plug 'wavded/vim-stylus'
 
-" Colorscheme
-Plug 'vivkin/flatland.vim'
-
 " Ruby syntax extensions for highlighting YARD documentation.
 Plug 'noprompt/vim-yardoc'
+
+" {{{ Color schemes
+
+" A vim color scheme based on the Railscasts Textmate theme.
+Plug 'jpo/vim-railscasts-theme'
+
+" A vim colorscheme based on Github's syntax highlighting.
+Plug 'endel/vim-github-colorscheme'
+
+" Mustard colorscheme for vim
+Plug 'sts10/vim-mustard'
+
+" A dark 16 color colorscheme for Vim, Gvim, and Nvim
+Plug 'jansenfuller/crayon'
 
 " precision colorscheme for the vim text editor
 " http://ethanschoonover.com/solarized
 Plug 'altercation/vim-colors-solarized'
-
-" {{{ Color schemes
-
-" Base16 for Vim
-Plug 'chriskempson/base16-vim'
-
-" A dark 16 color colorscheme for Vim, Gvim, and Nvim
-Plug 'jansenfuller/crayon'
 
 " }}}
 
