@@ -901,4 +901,12 @@ it 'routes to #${1:action}' do
 end
 endsnippet
 
+snippet dini "generic initializer" b
+attr_reader :$1
+
+def initialize(${1:attribute})
+	@$1 = $1
+end
+endsnippet
+
 # vim:ft=snippets:
