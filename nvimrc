@@ -135,6 +135,19 @@ if has("autocmd")
   au BufNewFile,BufRead *.json.jbuilder set ft=ruby syn=ruby
 endif
 
+" gui colors if running iTerm
+if $TERM_PROGRAM =~ "iTerm"
+  set termguicolors
+endif
+
+" if no filetype specified, set ft=markdown (alternative would be text)
+autocmd BufEnter * if &filetype == "" | setlocal ft=markdown | endif
+
+" Have the indent commands re-highlight the last visual selection to make
+" multiple indentations easier
+vnoremap > >gv
+vnoremap < <gv
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Extra Configurations
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
