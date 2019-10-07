@@ -5,6 +5,8 @@ call plug#begin('~/.nvim/plugged')
 
 Plug 'tpope/vim-sensible'
 
+Plug 'milch/vim-fastlane'
+
 " {{{ Neomake
 
 Plug 'neomake/neomake'
@@ -269,7 +271,7 @@ Plug 'mattn/gist-vim'
 Plug 'toyamarinyon/vim-swift'
 
 " Source code browser (supports C/C++, java, perl, python, tcl, sql, php, etc)
-Plug 'taglist.vim'
+" Plug 'taglist.vim'
 
 " SQL utilities - Formatting, generate - columns lists, procedures for databases
 Plug 'SQLUtilities'
@@ -292,6 +294,13 @@ Plug 'wavded/vim-stylus'
 " Ruby syntax extensions for highlighting YARD documentation.
 Plug 'noprompt/vim-yardoc'
 
+" {{{ Gradle/Groovy
+Plug 'vim-scripts/groovy.vim'
+
+Plug 'tfnico/vim-gradle'
+
+" }}}
+
 " {{{ Color schemes
 
 " A vim color scheme based on the Railscasts Textmate theme.
@@ -311,6 +320,13 @@ Plug 'jansenfuller/crayon'
 Plug 'altercation/vim-colors-solarized'
 
 " }}}
+
+" Kotlin plugin for Vim. Featuring: syntax highlighting, basic indentation,
+" Syntastic support
+Plug 'udalov/kotlin-vim'
+
+" Vim script for text filtering and alignment
+Plug 'godlygeek/tabular'
 
 " Add plugins to &runtimepath
 call plug#end()

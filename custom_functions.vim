@@ -154,3 +154,9 @@ nnoremap <leader>wtf oputs "#" * 120<c-m>puts caller<c-m>puts "#" * 120<esc>
 vnoremap ,case :s/\v\C(([a-z]+)([A-Z]))/\2_\l\3/g<CR>
 
 nmap <leader>cp :let @+ = expand("%")<CR>
+
+let g:S = 0  "result in global variable S
+function! Sum(number)
+  let g:S = g:S + a:number
+  return a:number
+endfunction
